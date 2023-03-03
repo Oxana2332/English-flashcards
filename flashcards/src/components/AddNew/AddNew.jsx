@@ -67,7 +67,7 @@ function AddNew() {
 
 	return (
 		<>
-			{!isValid && <div>Не заполнено</div>}
+			{!isValid && <div>Не все поля заполнены</div>}
 			{pressed ? (
 				<div className="wordItem">
 					<input
