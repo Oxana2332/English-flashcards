@@ -1,0 +1,38 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--headerFooter);
+    padding: 2.5%;
+    font-family: var(--designFont);
+    font-size: var(--fontTitle);
+    margin-bottom: 1%;
+    width: 95%;
+}
+
+.header_link {
+    text-decoration: none;
+    color: var(--font);
+    margin: 7%;
+    padding: 2%;
+    border-radius: 8px;
+}
+
+.active:hover {
+    color: black;
+}
+
+.active:focus {
+    text-decoration: underline;
+}
+
+.active:active {
+    box-shadow: var(--shadowActive);
+}
+
+@media screen and (max-width: 374px) {
+    .header_link {
+        margin: 5%;
+        padding: 2%;
+    }
+}

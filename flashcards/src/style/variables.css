@@ -1,0 +1,21 @@
+:root {
+    /* colors */
+    --basicLight: #e3c06f6e;
+    --focusBasicLight: #e3c06f;
+    --focusWord: aliceblue;
+    --basicDark: #000000ba;
+    --headerFooter: rgb(125, 186, 246);
+    --font: #ffffff;
+    --shadowActive: 10px 10px 10px 2px rgba(34, 60, 80, 0.2) inset, 10px 10px 10px 2px rgba(34, 60, 80, 0.2);
+
+    /* fonts */
+    --basicFont: "El Messiri", sans-serif;
+    --designFont: "Square Peg", cursive;
+
+    /* sizes */
+    --fontTitle: 2.2em;
+    --fontText: 1.3em;
+    --fontTitleAdaptive: 1em;
+    --fontmobile: 0.7em;
+    --fontTablet: 0.8em;
+}

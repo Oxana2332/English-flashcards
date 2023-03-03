@@ -1,0 +1,51 @@
+.dictionary {
+    padding: 0.5%;
+    margin-bottom: 5vh;
+}
+
+.dictionary_count {
+    display: flex;
+    flex-direction: row;
+    width: 91%;
+    font-family: var(--basicFont);
+}
+
+.dictionary_title {
+    text-align: center;
+    width: 100%;
+    color: var(--headerFooter);
+    font-size: var(--fontTitle);
+    font-family: var(--basicFont);
+}
+
+.dictionary_button {
+    width: 30%;
+    background-color: var(--basicDark);
+    border-color: rgba(0, 0, 0, 0.355);
+    color: #00000000;
+    font-family: var(--basicFont);
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .dictionary_title {
+        font-size: var(--fontTitleAdaptive);
+    }
+
+    .dictionary_count {
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .dictionary_title {
+        font-size: var(--fontTitleAdaptive);
+    }
+
+    .dictionary_count {
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+    }
+}

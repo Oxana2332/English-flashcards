@@ -1,0 +1,10 @@
+.footer {
+    position: fixed;
+    background-color: var(--headerFooter);
+    padding: 0.2%;
+    color: var(--font);
+    font-family: var(--designFont);
+    width: 100%;
+    bottom: 0%;
+    font-size: calc(var(--fontText) / 1.3);
+}

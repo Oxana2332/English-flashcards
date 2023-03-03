@@ -1,0 +1,135 @@
+.wordItem {
+    display: flex;
+    flex-direction: row;
+    border-color: rgba(0, 0, 0, 0.355);
+    font-family: var(--basicFont);
+}
+
+.word {
+    width: 100%;
+    margin-top: 1%;
+    padding: 1% 0 1% 0;
+    border-radius: 1rem;
+    font-size: var(--fontText);
+}
+
+.button {
+    width: 18%;
+    padding: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    font-family: var(--basicFont);
+}
+
+.edit {
+    margin-right: 1%;
+    margin-top: 1.5%;
+    background-image: url("../../../public/assets/editButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.del {
+    margin-top: 1.5%;
+    background-image: url("../../../public/assets/deleteButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button:hover {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+    transition: box-shadow 0.5s, transform 0.5s;
+    color: black;
+}
+
+.button:active {
+    box-shadow: var(--shadowActive);
+}
+
+.word:hover {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+    transition: box-shadow 0.5s, transform 0.5s;
+    color: black;
+}
+
+.word:active {
+    box-shadow: var(--shadowActive);
+}
+
+.word_input {
+    width: 100%;
+    padding: 1% 0 1% 0;
+    border-radius: 1rem;
+    border: 1px solid var(--headerFooter);
+    line-height: 1;
+    font-size: var(--fontText);
+    text-align: center;
+}
+
+.red {
+    border-color: red;
+}
+
+.save {
+    background-image: url("../../../public/assets/saveButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cancel {
+    background-image: url("../../../public/assets/cancelButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+}
+.word_input:hover {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+    transition: box-shadow 0.5s, transform 0.5s;
+    color: black;
+}
+
+.word_input:focus {
+    background-color: var(--focusWord);
+}
+
+.word_input:active {
+    box-shadow: var(--shadowActive);
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .word {
+        width: 50%;
+        font-size: var(--fontTablet);
+    }
+
+    .word_input {
+        width: 50%;
+        font-size: var(--fontTablet);
+    }
+
+    .button {
+        width: 10%;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .word {
+        width: 45%;
+        font-size: var(--fontmobile);
+    }
+
+    .word_input {
+        width: 40%;
+        font-size: var(--fontmobile);
+    }
+
+    .button {
+        width: 10%;
+    }
+}

@@ -1,0 +1,45 @@
+.wordItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    border-color: rgba(0, 0, 0, 0.355);
+    font-family: var(--basicFont);
+}
+
+.button {
+    width: 18%;
+    padding: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    font-family: var(--basicFont);
+}
+
+.new {
+    height: 5vh;
+    width: 5vw;
+    background-image: url("../../../public/assets/addButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button:hover {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+    transition: box-shadow 0.5s, transform 0.5s;
+    color: black;
+}
+
+.button:active {
+    box-shadow: var(--shadowActive);
+}
+
+@media screen and (max-width: 767px) {
+    .new {
+        height: 5vh;
+        width: 8vw;
+    }
+}
