@@ -1,0 +1,7 @@
+.count_dataError {
+    text-align: center;
+    margin: 30% auto;
+    color: red;
+    font-size: var(--fontTitle);
+    font-family: var(--basicFont);
+}

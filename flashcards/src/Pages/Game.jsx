@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CollectionWordsContext } from '../components/CollectionWordsContext/CollectionWordsContext.jsx';
 import Card from '../components/Card/Card.jsx';
 import '../style/game.css';
-import data from '../data/data.json';
 
 function Game() {
-	const [words, setWords] = useState(false);
+	const { collectionWords, setCollectionWords } = useContext(
+		CollectionWordsContext
+	);
 	const [count, setCount] = useState(0);
 	const [learnedWords, setLearnedWords] = useState(0);
 
+	console.log(learnedWords);
+
 	useEffect(() => {
-		setWords(data);
+		setCollectionWords(collectionWords);
 	}, []);
 
 	function handlePressed() {
@@ -21,16 +25,18 @@ function Game() {
 	function handlerPrev() {
 		let copyCount = count;
 		copyCount--;
-		copyCount < 0 ? setCount(words.length - 1) : setCount(copyCount);
+		copyCount < 0
+			? setCount(collectionWords.length - 1)
+			: setCount(copyCount);
 	}
 
 	function handlerNext() {
 		let copyCount = count;
 		copyCount++;
-		copyCount >= words.length ? setCount(0) : setCount(copyCount);
+		copyCount >= collectionWords.length ? setCount(0) : setCount(copyCount);
 	}
 
-	if (!words) return <h1>Loading...</h1>;
+	if (!collectionWords) return <h1>Loading...</h1>;
 	else
 		return (
 			<div className="conteinerCard">
@@ -38,8 +44,8 @@ function Game() {
 					&#8249;
 				</button>
 				<Card
-					key={words.id}
-					item={words[count]}
+					key={collectionWords.id}
+					item={collectionWords[count]}
 					handlePressed={handlePressed}
 				/>
 				<button className="button_next" onClick={handlerNext}>
