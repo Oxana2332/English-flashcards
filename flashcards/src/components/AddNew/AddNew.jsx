@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CollectionWordsContext } from '../CollectionWordsContext/CollectionWordsContext';
 import './addNew.css';
 
 function AddNew() {
@@ -13,6 +14,7 @@ function AddNew() {
 		useState(true);
 	const [isValidValueRussian, setIsValidValueRussian] = useState(true);
 	const [isValidValueTags, setIsValidValueTags] = useState(true);
+	const { addWord } = useContext(CollectionWordsContext);
 
 	const handleChangeEng = (e) => {
 		setNewEnglish(e.target.value);
@@ -57,7 +59,14 @@ function AddNew() {
 			setIsValid(true);
 			setPressed(!pressed);
 			clearFields();
-			console.log(newEnglish, newTranscription, newRussian, newTags);
+
+			addWord({
+				id: crypto.randomUUID(),
+				english: newEnglish,
+				transcription: newTranscription,
+				russian: newRussian,
+				tags: newTags,
+			});
 		}
 	};
 
