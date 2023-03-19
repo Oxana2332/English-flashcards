@@ -72,6 +72,7 @@ function AddNew() {
 
 	const cancelEdit = () => {
 		setPressed(!pressed);
+		clearFields();
 	};
 
 	return (
