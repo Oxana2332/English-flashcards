@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { CollectionWordsContext } from '../components/CollectionWordsContext/CollectionWordsContext.jsx';
 import WordItem from '../components/WordItem/WordItem.jsx';
 import AddNew from '../components/AddNew/AddNew.jsx';
-import data from '../data/data.json';
 import '../style/home.css';
 import '../style/variables.css';
 
 function Home() {
-	const [words, setWords] = useState([]);
+	const { collectionWords, setCollectionWords } = useContext(
+		CollectionWordsContext
+	);
 	const titleArr = ['english', 'transcription', 'russian', 'topic'];
 
 	useEffect(() => {
-		setWords(data);
+		setCollectionWords(collectionWords);
 	}, []);
 
 	function editWordItem(english, transcription, russian, tags, id) {
-		const resultEditWords = data.map((item) => {
+		const resultEditWords = collectionWords.map((item) => {
 			if (item.id === id) {
 				item.english = english;
 				item.transcription = transcription;
@@ -43,7 +45,7 @@ function Home() {
 				})}
 			</div>
 			<AddNew />
-			{words.map((item) => (
+			{collectionWords.map((item) => (
 				<WordItem
 					key={item.id}
 					item={{ ...item }}

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CollectionWordsContext } from '../CollectionWordsContext/CollectionWordsContext';
 import './wordItem.css';
 
 function WordItem({ item, editWordItem }) {
 	const { english, transcription, russian, tags, id } = item;
+	const { editWord, delWord } = useContext(CollectionWordsContext);
 	const [openInput, setOpenInput] = useState(false);
 	const [valueEnglish, setValueEnglish] = useState('');
 	const [valueTranscription, setValueTranscription] = useState('');
@@ -55,6 +56,13 @@ function WordItem({ item, editWordItem }) {
 				valueTags,
 				id
 			);
+			editWord({
+				english: valueEnglish,
+				transcription: valueTranscription,
+				russian: valueRussian,
+				tags: valueTags,
+				id: id,
+			});
 			setOpenInput(!openInput);
 		}
 	}
@@ -69,6 +77,10 @@ function WordItem({ item, editWordItem }) {
 		setIsValidValueTranscription(true);
 		setIsValidValueRussian(true);
 		setIsValidValueTags(true);
+	}
+
+	function handleClickDeleteButton() {
+		delWord({ id });
 	}
 
 	return (
@@ -132,7 +144,10 @@ function WordItem({ item, editWordItem }) {
 						className="button edit"
 						onClick={() => setOpenInput(!openInput)}
 					></button>
-					<button className="button del"></button>
+					<button
+						onClick={handleClickDeleteButton}
+						className="button del"
+					></button>
 				</div>
 			)}
 		</div>

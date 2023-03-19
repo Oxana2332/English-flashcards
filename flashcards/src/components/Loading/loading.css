@@ -1,0 +1,27 @@
+.loading {
+    margin: 10% 40%;
+    width: 250px;
+    height: 250px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .loading {
+        margin: 30% 30%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .loading {
+        margin: 25% 20%;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .loading {
+        margin: 25% 15%;
+        width: 200px;
+        height: 200px;
+    }
+}
